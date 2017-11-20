@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AccessSQL</name>
+    </assembly>
+    <members>
+        <member name="T:AccessSQL.AccessHandler">
+            <summary>
+            AccessHandleriä käytetään tietokannan yhdistykseen ja muokkaamiseen
+            </summary>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.Viesti(System.String,System.String,System.Int32)">
+            <summary>
+            Viesti kirjoittaa konsoliin viestin jossa näkyy lähettäjän tiedosto, lähetysrivi sekä tahdottu viesti
+            </summary>
+            <param name="viesti"></param>
+            <param name="tiedosto"></param>
+            <param name="rivi"></param>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.ViestienNaytto(System.Boolean,System.Boolean)">
+            <summary>
+            true näyttää viestit. Sisäiset viestit tulevat tiedostosta AccessHandler. Ulkoiset viestit ovat viestejä jotka tulevat muista tiedostoista.
+            </summary>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.Yhdista(System.String)">
+            <summary>
+            Luo ja avaa yhteyden ohjelman ja tietokannan välille. Tarvitsee kannan polun.
+            </summary>
+            <param name="polku"></param>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.EtsiTaulut">
+            <summary>
+            Etsii kaikki taulut yhdistetystä tietokannasta. Palauttaa listan TaulujenNimet.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.EtsiSuhteet">
+            <summary>
+            Hakee suhteet yhdistetystä tietokannasta ja palauttaa ne DataTablena
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.HaeTaulut(System.Collections.Generic.List{System.String})">
+            <summary>
+            Hakee kaikki tietokanna taulut ja palauttaa DataTableCollectionin DTC
+            </summary>
+            <param name="TaulujenNimet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.SQLkomentoINSERT(System.Collections.Generic.List{System.String},System.String[],System.String)">
+            <summary>
+            Lisää tauluun nimi rivin rivi
+            </summary>
+            <param name="sarakkeet"></param>
+            <param name="rivi"></param>
+            <param name="nimi"></param>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.SQLkomentoTaulu(System.String)">
+            <summary>
+            Ajaa SQLkomennon (taulu)
+            </summary>
+            <param name="sqlKomento"></param>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.SQLkomento(System.String,System.String,System.Data.DataSet)">
+            <summary>
+            Ajaa SQLkomennon, täyttää datasetin ja palauttaa sen
+            </summary>
+            <param name="sqlKomento"></param>
+            <param name="nimi"></param>
+            <param name="dataset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.TaulunTiedot(System.Data.DataTableCollection)">
+            <summary>
+            Tulostaa taulun nimen, sarakkeet ja rivit
+            </summary>
+            <param name="DTC"></param>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.DataTyypit(System.Data.DataTable)">
+            <summary>
+            Hakee DataTablelle sarakkeiden DataTypet ja palauuttaa ne listana
+            </summary>
+            <param name="DT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.AccessHandler.SuljeYhteys">
+            <summary>
+            Sulkee yhteyden tietokantaan
+            </summary>
+        </member>
+        <member name="T:AccessSQL.SQLRakentaja">
+            <summary>
+            SQLRakentaja rakentaa sql komentoja
+            </summary>
+        </member>
+        <member name="P:AccessSQL.SQLRakentaja.DTC">
+            <summary>
+            DTC sisältää tietokannan taulut
+            </summary>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.DROP(System.String)">
+            <summary>
+            DROP poistaa koko taulun
+            </summary>
+            <param name="taulu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.DELETE(System.String)">
+            <summary>
+            DELETE tyhjentää taulun
+            </summary>
+            <param name="taulu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.INSERT(System.String,System.Data.DataTable)">
+            <summary>
+            INSERT tarvitsee taulun nimen ja lisättävät tiedot datatablena
+            </summary>
+            <param name="nimi"></param>
+            <param name="DT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.CREATETABLE(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            CREATETABLE tekee uuden taulun, tarvitsse taulun nimen, sarakkeiden nimet sekä niiden datatyypit
+            </summary>
+            <param name="nimi"></param>
+            <param name="sarakkeet"></param>
+            <param name="Datatyypit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.SELECT(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            SELECT valitsee sarakkeet taulusta
+            </summary>
+            <param name="sarakkeet"></param>
+            <param name="taulu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.ORDERBY(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            ORDERBY tarvitsee SELECTIä varten sarakkeet, lajittelua varten valinnat, sekä taulun nimen. Voi myös antaa suoraan sqlKomennon SELECTiltä. valinnat esim [Nimi,Nouseva,ID,Laskeva]
+            </summary>
+            <param name="sarakkeet"></param>
+            <param name="valinnat"></param>
+            <param name="taulu"></param>
+            <param name="sqlKomento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccessSQL.SQLRakentaja.WHERE_AND_OR(System.Data.DataTable,System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            WHERE_AND_OR filtteröi taulun sarakkeiden ja valintojen mukaan. SELECT ??? FROM ??? WHERE sqlKomennon voi antaa myös suoraan. sarakkeet kertoo näytettävät sarakkeet.
+            valinnat esim
+            -------------------------------------
+            |Nimi   |   =   |Jouni    |         |
+            |Pvm    |Between|20.1.2013|20.1.2015|
+            |Nimi   |   =   |Mannit   |         |
+            -------------------------------------
+            </summary>
+            <param name="valinnat"></param>
+            <param name="sarakkeet"></param>
+            <param name="taulu"></param>
+            <param name="sqlKomento"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

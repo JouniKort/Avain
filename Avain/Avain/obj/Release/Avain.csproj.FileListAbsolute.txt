@@ -1,0 +1,17 @@
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\Resources\Key.ico
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\Avain.exe.config
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\Avain.exe
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\Avain.pdb
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\AccessSQL.dll
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\Gma.System.MouseKeyHook.dll
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\AccessSQL.pdb
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\bin\Release\AccessSQL.xml
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Interop.SHDocVw.dll
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Interop.Shell32.dll
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.csproj.ResolveComReference.cache
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.Configurations.resources
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.Properties.Resources.resources
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.csproj.GenerateResource.Cache
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.exe
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.pdb
+G:\VS\VisualStudio Projektit\Projektit\Avain\Avain\obj\Release\Avain.csprojResolveAssemblyReference.cache
